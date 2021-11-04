@@ -1,22 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#include <string.h>
-#include <math.h>
-#include <locale.h>
-#include <windows.h>
+#include <time.h> //Manipulação de data e horários
+#include <stdbool.h> //Manipulação de variáveis booleanas
+#include <string.h> //Manipulação de strings
+#include <math.h> //Funções básicas matemáticas
+#include <ctype.h> //Manipulação de caracteres, como deixar lower, upper
+
+/*Faça um programa que leia números digitados pelo usuário até ele digitar -1
+(utilizando um laço “do while”). No final, calcule a média dos números fornecidos*/
 
 int main() {
-    // Define o valor das páginas de código UTF8 e default do Windows
-	UINT CPAGE_UTF8 = 65001;
-	UINT CPAGE_DEFAULT = GetConsoleOutputCP();
- 	// Define codificação como sendo UTF-8
-	SetConsoleOutputCP(CPAGE_UTF8);
-
     int i = 0;
     float num, soma = 0, media = 0;
     do {
-        printf("Digite um número: (-1 para parar) ");
+        printf("Digite um numero: (-1 para parar) ");
         scanf("%f", &num);
         if (num != -1) {
             i++;
@@ -25,11 +22,9 @@ int main() {
     } while (num != -1);
     system("cls");
     media = soma / i;
-    printf("Média dos números: %.2f",media);
-    printf("\n");
+    printf("Media dos numeros: %.2f",media);
 
-    // Retorna codificação padrão do Windows
-    SetConsoleOutputCP(CPAGE_DEFAULT);
+    printf("\n");
     system("PAUSE");
     return 0;
 }

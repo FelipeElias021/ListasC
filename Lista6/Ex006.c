@@ -1,24 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#include <string.h>
-#include <math.h>
-#include <locale.h>
-#include <windows.h>
+#include <time.h> //Manipulação de data e horários
+#include <stdbool.h> //Manipulação de variáveis booleanas
+#include <string.h> //Manipulação de strings
+#include <math.h> //Funções básicas matemáticas
+#include <ctype.h> //Manipulação de caracteres, como deixar lower, upper
+
+/*Faça um programa que leia o código dos produtos pedidos e as quantidades
+desejadas; calcule e mostre o valor a ser pago por produto (preço *
+quantidade) e o total do pedido. Considere que o cliente deve informar quando
+o pedido deve ser encerrado..*/
 
 int main() {
-    // Define o valor das páginas de código UTF8 e default do Windows
-	UINT CPAGE_UTF8 = 65001;
-	UINT CPAGE_DEFAULT = GetConsoleOutputCP();
- 	// Define codificação como sendo UTF-8
-	SetConsoleOutputCP(CPAGE_UTF8);
-
     int codigo, qtd, qtd1 = 0, qtd2 = 0, qtd3 = 0, qtd4 = 0, qtd5 = 0;
     float preco, total = 0, precoTotal = 0;
     printf("------------------------------------------------\n");
     printf("                      Menu\n");
     printf("------------------------------------------------\n");
-    printf("Produto          |    Código  |  Preço(unitário)\n");
+    printf("Produto          |    Codigo  |  Preco(unitario)\n");
     printf("------------------------------------------------\n");
     printf("Cachorro quente  |    1       |  R$1,50\n");
     printf("Hamburguer       |    2       |  R$2,00\n");
@@ -29,7 +28,7 @@ int main() {
     do {
         do {
             qtd = 0;
-            printf("\n\nCódigo do produto: ");
+            printf("\n\nCodigo do produto: ");
             scanf("%d",&codigo);
         } while (codigo < 1 || codigo > 6);
         if (codigo == 6) {
@@ -46,45 +45,45 @@ int main() {
                 qtd1 += qtd;
                 preco = qtd * 1.5;
                 if (qtd == 1) {
-                    printf("Você escolheu %d cachorro quente",qtd);
+                    printf("Voce escolheu %d cachorro quente",qtd);
                 } else {
-                    printf("Você escolheu %d cachorros quentes",qtd);
+                    printf("Voce escolheu %d cachorros quentes",qtd);
                 }
                 break;
             case 2:
                 qtd2 += qtd;
                 preco = qtd * 2;
                 if (qtd == 1) {
-                    printf("Você escolheu %d hamburguer",qtd);
+                    printf("Voce escolheu %d hamburguer",qtd);
                 } else {
-                    printf("Você escolheu %d hambúgueres",qtd);
+                    printf("Voce escolheu %d hamburgueres",qtd);
                 }
                 break;
             case 3:
                 qtd3 += qtd;
                 preco = qtd * 2.5;
                 if (qtd == 1) {
-                    printf("Você escolheu %d cheeseburguer",qtd);
+                    printf("Voce escolheu %d cheeseburguer",qtd);
                 } else {
-                    printf("Você escolheu %d cheesebuguers",qtd);
+                    printf("Voce escolheu %d cheesebuguers",qtd);
                 }
                 break;
             case 4:
                 qtd4 += qtd;
                 preco = qtd * 3;
                 if (qtd == 1) {
-                    printf("Você escolheu %d eggcheeseburguer",qtd);
+                    printf("Voce escolheu %d eggcheeseburguer",qtd);
                 } else {
-                    printf("Você escolheu %d eggcheesebuguers",qtd);
+                    printf("Voce escolheu %d eggcheesebuguers",qtd);
                 }
                 break;
             case 5:
                 qtd5 += qtd;
                 preco = qtd * 1.5;
                 if (qtd == 1) {
-                    printf("Você escolheu %d refrigerante",qtd);
+                    printf("Voce escolheu %d refrigerante",qtd);
                 } else {
-                    printf("Você escolheu %d refrigerantes",qtd);
+                    printf("Voce escolheu %d refrigerantes",qtd);
                 }
                 break;
         }
@@ -93,7 +92,7 @@ int main() {
 
     system("cls");
     printf("Nota fiscal:\n");
-    printf("Código | Produto          | Qtd. | Preço\n");
+    printf("Codigo | Produto          | Qtd. | Preco\n");
     if (qtd1 > 0) {
         printf("001    | Cachorro quente  | %d    | R$%.2f\n",qtd1, qtd1*1.5);
     }
@@ -113,8 +112,6 @@ int main() {
     printf("Total :                            R$%.2f",precoTotal);
     printf("\n");
 
-    // Retorna codificação padrão do Windows
-    SetConsoleOutputCP(CPAGE_DEFAULT);
     system("PAUSE");
     return 0;
 }

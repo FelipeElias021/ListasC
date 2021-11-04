@@ -6,23 +6,13 @@
 #include <math.h> //Funções básicas matemáticas
 #include <ctype.h> //Manipulação de caracteres, como deixar lower, upper
 
-/*Faça um programa que leia dois valores inteiros x e y, e que calcule e mostre a
-potência xy
-. Obs. Sem utilizar funções de math.h, como a pow().*/
-
+/*Escreva um programa que exiba todos os números pares de 100 a 200, um em
+cada linha.*/
 
 int main() {
-    int x, y, pot;
-    printf("Base: ");
-    scanf("%d", &x);
-    printf("Expoente: ");
-    scanf("%d", &y);
-    pot = x;
-    do {
-        pot = pot * x;
-        y--;
-    } while (y > 1);
-    printf("%d", pot);
+    for (int i = 100;i <= 200; i += 2){
+        printf("%d\n",i);
+    }
 
     printf("\n");
     system("PAUSE");

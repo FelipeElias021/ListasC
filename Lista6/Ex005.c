@@ -1,31 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#include <string.h>
-#include <math.h>
-#include <locale.h>
-#include <windows.h>
+#include <time.h> //Manipulação de data e horários
+#include <stdbool.h> //Manipulação de variáveis booleanas
+#include <string.h> //Manipulação de strings
+#include <math.h> //Funções básicas matemáticas
+#include <ctype.h> //Manipulação de caracteres, como deixar lower, upper
+
+/*Escreva um programa para ler dois números inteiros M e N e, a seguir, verificar
+se eles são idênticos. Caso não sejam iguais, solicitar ao usuário que digite
+novamente o segundo número até que o digite igual ao primeiro. Imprimir a
+quantidade de tentativas que o usuário precisou para digitar os dois números
+iguais.*/
 
 int main() {
-    // Define o valor das páginas de código UTF8 e default do Windows
-	UINT CPAGE_UTF8 = 65001;
-	UINT CPAGE_DEFAULT = GetConsoleOutputCP();
- 	// Define codificação como sendo UTF-8
-	SetConsoleOutputCP(CPAGE_UTF8);
-
     int m, n, i;
-    printf("Digite um número: ");
+    printf("Digite um numero: ");
     scanf("%d",&m);
     do {
-        printf("Digite o mesmo número: ");
+        printf("Digite o mesmo numero: ");
         scanf("%d",&n);
         i++;
     } while (m != n);
-    printf("Tentivas para digitar os 2 números iguais: %d", i);
+    printf("Tentivas para digitar os 2 numeros iguais: %d", i);
     printf("\n");
 
-    // Retorna codificação padrão do Windows
-    SetConsoleOutputCP(CPAGE_DEFAULT);
     system("PAUSE");
     return 0;
 }

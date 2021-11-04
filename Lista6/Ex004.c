@@ -1,22 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#include <string.h>
-#include <math.h>
-#include <locale.h>
-#include <windows.h>
+#include <time.h> //Manipulação de data e horários
+#include <stdbool.h> //Manipulação de variáveis booleanas
+#include <string.h> //Manipulação de strings
+#include <math.h> //Funções básicas matemáticas
+#include <ctype.h> //Manipulação de caracteres, como deixar lower, upper
+
+/*Escreva um programa que apresente quatro opções: (a) consulta saldo, (b) saque e
+(c)depósito e (d) sair. O saldo deve iniciar em R$ 0,00. A cada saque ou depósito o
+valor do saldo deve ser atualizado.*/
 
 int main() {
-    // Define o valor das páginas de código UTF8 e default do Windows
-	UINT CPAGE_UTF8 = 65001;
-	UINT CPAGE_DEFAULT = GetConsoleOutputCP();
- 	// Define codificação como sendo UTF-8
-	SetConsoleOutputCP(CPAGE_UTF8);
-
     char opcao;
     float saldo, transacao;
     do {
-        printf("\n\nOpções:\n(a) Consultar saldo\n(b) Saque\n(c) Depositar\n(d) Sair\n(e) Limpar tela\n> ");
+        printf("\n\nOpcoes:\n(a) Consultar saldo\n(b) Saque\n(c) Depositar\n(d) Sair\n(e) Limpar tela\n> ");
         scanf(" %c",&opcao);
         switch (opcao) {
             case 'a':
@@ -43,13 +41,11 @@ int main() {
                 system("cls");
                 break;
             default:
-                printf("Digite uma opção válida");
+                printf("Digite uma opcao valida");
         }
     } while (opcao != 'd');
     printf("\n");
 
-    // Retorna codificação padrão do Windows
-    SetConsoleOutputCP(CPAGE_DEFAULT);
     system("PAUSE");
     return 0;
 }

@@ -6,23 +6,19 @@
 #include <math.h> //Funções básicas matemáticas
 #include <ctype.h> //Manipulação de caracteres, como deixar lower, upper
 
-/*Faça um programa que leia dois valores inteiros x e y, e que calcule e mostre a
-potência xy
-. Obs. Sem utilizar funções de math.h, como a pow().*/
-
+/*Escreva um programa que calcule e escreva a soma dos 10 primeiros termos da
+seguinte série:
+1/2 + 2/4 + 3/6 + 4/8 ...*/
 
 int main() {
-    int x, y, pot;
-    printf("Base: ");
-    scanf("%d", &x);
-    printf("Expoente: ");
-    scanf("%d", &y);
-    pot = x;
-    do {
-        pot = pot * x;
-        y--;
-    } while (y > 1);
-    printf("%d", pot);
+    int x= 1, y = 2, i;
+    float z=0;
+    for (i = 1; i <= 10; i++) {
+        z += ((float)x/y);
+        x++;
+        y += 2;
+    }
+    printf("%.0f",z);
 
     printf("\n");
     system("PAUSE");
