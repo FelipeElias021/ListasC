@@ -32,7 +32,9 @@ int main() {
         } else if (op[i] == '*') {
             resul[i] = v1[i] * v2[i];
         } else if (op[i] == '/') {
-            resul[i] = v1[i] / v2[i];
+            if (v2[i] != 0) {
+                resul[i] = v1[i] / v2[i];
+            }
         } else {
             resul[i] = 0;
         }
