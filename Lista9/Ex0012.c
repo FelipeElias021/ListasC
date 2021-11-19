@@ -58,7 +58,7 @@ int main()
     }
     printf("\n");
     for (int j = 0; j < 5 - Imenor_elem; j++)
-    {//5 - Imenor_elem vai definir o numero de colunos, se a linha onde esta o menor for 0, então vai ser 5-0-5colunas;5-1=4colunas...5-4=1coluna
+    { //5 - Imenor_elem vai definir o numero de colunos, se a linha onde esta o menor for 0, então vai ser 5-0-5colunas;5-1=4colunas...5-4=1coluna
         if (j == 0)
         {
             maior_elem = matriz[Imenor_elem][j];
@@ -72,31 +72,46 @@ int main()
         }
     }
     printf("\n");
-    printf("Maior elemento da linha %d, onde se encontra menor elemento: %d\n\n", Imenor_elem + 1,maior_elem);
+    printf("Maior elemento da linha %d, onde se encontra menor elemento: %d\n\n", Imenor_elem + 1, maior_elem);
 
     printf("\n");
     printf("Exercicio B:\n");
 
-    int pul = 0, l =5, soma = 0, contador = 0;
+    int pul = 0, l = 5, soma = 0, contador = 0;
     float media;
     // pul é pulador de coluna, e l é as colunas
 
     for (int i = 0; i < 5; i++)
     {
+        if (pul == 1)
+        {
+            printf("\t");
+        }
+        else if (pul == 2)
+        {
+            printf("\t\t");
+        }
+
         for (int j = 0; j < l; j++)
-        { 
-            printf("%d\t", matriz[i][j+pul]);
-            soma += matriz[i][j+pul];
+        {
+            printf("%d\t", matriz[i][j + pul]);
+            soma += matriz[i][j + pul];
             contador++;
         }
-        if (i < 2) {
+        if (i < 2)
+        {
             pul++;
-        } else {
+        }
+        else
+        {
             pul--;
         }
-        if (i < 2) {
+        if (i < 2)
+        {
             l -= 2;
-        } else {
+        }
+        else
+        {
             l += 2;
         }
         /*Quando a linha for < 2, (0,1),o pul vai incrementar, para pegar a coluna seguinte 0-1-2-1-0; quando chegar na linha 2
@@ -105,7 +120,7 @@ int main()
         subtrair de 1 em 1, ele vai fazer isso de 2 em 2*/
         printf("\n");
     }
-    media = (float)soma /contador;
+    media = (float)soma / contador;
     printf("\n");
     printf("Media dos elementos: %.1f", media);
 
