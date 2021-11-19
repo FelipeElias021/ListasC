@@ -13,7 +13,7 @@ e o peso do boi mais gordo e do boi mais magro.*/
 int main() {
     int id, i, maxID, minID;
     float peso, maxP, minP;
-    for (i = 1; i <= 4; i++) {
+    for (i = 1; i <= 90; i++) {
         printf("Numero de id: ");
         scanf("%d",&id);
         printf("Peso: ");
